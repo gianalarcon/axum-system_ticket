@@ -15,6 +15,7 @@ async fn api_login(cookies: Cookies, payload: Json<LoginPayload>) -> Result<Json
   if payload.username != "demo1" || payload.pwd != "welcome" {
     return Err(Error::LoginFail);
   }
+
   //FIXME: Implement real
   cookies.add(Cookie::new(web::AUTH_TOKEN, "user-1.exp.sign"));
 
@@ -24,6 +25,7 @@ async fn api_login(cookies: Cookies, payload: Json<LoginPayload>) -> Result<Json
       "success": true
     }
   }));
+
   Ok(body)
 }
 
