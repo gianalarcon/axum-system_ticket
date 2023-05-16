@@ -14,6 +14,7 @@ use crate::model::ModelController;
 
 pub use self::error::{Error, Result};
 
+mod ctx;
 mod error;
 mod model;
 mod web;
